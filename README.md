@@ -60,39 +60,28 @@ Home services is a **$600B+ industry** in the US alone with:
 ## Repository Structure
 
 ```
-├── README.md                          # This file
-├── BUSINESS-MODEL.md                  # Full vertical strategy and market analysis
-├── ICP-RESEARCH.md                    # Ideal customer profiles and market segments
-├── PRICING-ECONOMICS.md               # Pricing strategy and unit economics
+├── README.md                              # This file
+├── BUSINESS-MODEL.md                      # Full vertical strategy and market analysis
 │
 ├── offers/
-│   ├── OFFER-1-LEAD-RECOVERY-ENGINE.md    # Tier 1 full offer spec
-│   ├── OFFER-2-GROWTH-MACHINE.md          # Tier 2 full offer spec
-│   └── OFFER-3-AI-OPS-HUB.md             # Tier 3 full offer spec
-│
-├── systems/
-│   ├── SYSTEMS-SPEC.md                    # Full technical architecture
-│   ├── AI-RECEPTIONIST.md                 # 24/7 call/text/form handling system
-│   ├── LEAD-FOLLOW-UP-ENGINE.md           # Multi-channel follow-up sequences
-│   ├── REVIEW-MANAGER.md                  # Review generation and response system
-│   ├── ESTIMATE-CLOSER.md                 # Estimate follow-up and closing system
-│   ├── COLD-OUTREACH.md                   # B2B outreach to PMs/realtors/commercial
-│   ├── NEIGHBORHOOD-TARGETING.md          # Geo-targeted canvassing system
-│   ├── SEASONAL-CAMPAIGNS.md              # Automated seasonal marketing
-│   ├── AI-DISPATCHER.md                   # Job routing and scheduling
-│   └── CUSTOMER-LIFECYCLE.md              # Retention and lifecycle marketing
+│   ├── OFFER-1-LEAD-RECOVERY-ENGINE.md    # Tier 1: $497/mo — AI receptionist + follow-up
+│   ├── OFFER-2-GROWTH-MACHINE.md          # Tier 2: $997/mo — Outreach + estimate recovery
+│   └── OFFER-3-AI-OPS-HUB.md             # Tier 3: $1,997/mo — Full operations automation
 │
 ├── sales/
-│   ├── SALES-PLAYBOOK.md                  # Full outreach strategy and scripts
-│   ├── EMAIL-SEQUENCES.md                 # Cold email campaigns for selling this
-│   ├── OBJECTION-HANDLING.md              # Every objection and response
-│   └── CASE-STUDY-TEMPLATES.md            # Templates for building social proof
+│   ├── LEAD-GEN-MASTER-PLAN.md            # ★ Complete 6-channel lead gen strategy
+│   ├── CRAIGSLIST-SYSTEM.md               # ★ Deep-dive Craigslist posting system
+│   ├── MARKETPLACE-CHANNELS.md            # ★ All platforms ranked (HD Pro, Porch, Nextdoor, etc.)
+│   ├── SALES-PLAYBOOK.md                  # Full outreach-to-close scripts
+│   ├── EMAIL-SEQUENCES.md                 # 4 cold email campaigns with templates
+│   ├── OBJECTION-HANDLING.md              # Every objection and word-for-word response
+│   └── CASE-STUDY-TEMPLATES.md            # Templates for social proof production
+│
+├── systems/
+│   └── SYSTEMS-SPEC.md                    # Full technical architecture + costs
 │
 ├── implementation/
-│   ├── IMPLEMENTATION-GUIDE.md            # Deployment and delivery process
-│   ├── ONBOARDING-CHECKLIST.md            # Client onboarding steps
-│   ├── TECH-STACK.md                      # Tools, APIs, and infrastructure
-│   └── COST-STRUCTURE.md                  # Per-client delivery costs
+│   └── IMPLEMENTATION-GUIDE.md            # Day-by-day deployment + onboarding checklist
 │
 └── assets/
     └── diagrams/                          # System architecture diagrams
