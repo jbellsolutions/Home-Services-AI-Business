@@ -1,120 +1,177 @@
-# Home Services AI Business System
+# Home Services AI Business — Deployable Product
 
-## The Vertical Play: AI Agent Systems for Home Services Companies
+## What This Is
 
-**One-liner:** We deploy AI agent systems into home services businesses — HVAC, plumbing, roofing, electrical, landscaping, cleaning — that book jobs, follow up with leads, manage reviews, and run operations 24/7. Your phone never stops ringing. Your calendar never has gaps.
+A complete, ready-to-deploy business system for home services companies. You walk in, sign the client, and deploy everything from this repo. Marketing, lead gen, AI phone system, operations backend — all of it.
 
----
-
-## Why Home Services?
-
-Home services is a **$600B+ industry** in the US alone with:
-- 1.2M+ businesses, 90% under $5M revenue
-- Massive fragmentation — most are 1-50 employee operations
-- Technology adoption is 5-10 years behind other industries
-- Owner-operators drowning in admin, missing calls, losing leads
-- Average missed call rate: **62%** — each missed call = $200-$1,500 lost job
-- Review management is broken — 85% never respond to reviews
-- Follow-up is nonexistent — 78% of leads go to whoever responds first
-
-**The opportunity:** These businesses understand paying for results. They already spend $2K-$15K/mo on marketing (SEO, Google Ads, LSA). But they're LEAKING revenue because nobody answers the phone, follows up on leads, or manages the customer journey.
-
-**We don't generate leads. We stop the bleeding.**
+**The offer:** "I'll handle all your marketing, lead generation, AI phone system, and operations backend. You cover the marketing budget. I either charge a retainer OR take an equity/revenue share. You just do the work."
 
 ---
 
-## The Offer Suite (3 Tiers)
+## How It Works (For You, the Operator)
 
-### Tier 1: The Lead Recovery Engine — $1,500 setup + $497/mo
-**"Never Miss Another Lead Again"**
-- AI answers every call, text, and web form 24/7
-- Instant speed-to-lead response (under 60 seconds)
-- Automated follow-up sequences (call, text, email)
-- Review request automation after every completed job
-- Google Business Profile optimization
-- **Expected: 15-30 additional booked jobs/month from leads you're already paying for**
+1. **Sign the client** — use the partnership agreement template in `agreements/`
+2. **Deploy the lead gen** — Craigslist, Facebook Marketplace, Nextdoor, free platforms (all playbooks in `lead-gen/`)
+3. **Set up the AI systems** — phone receptionist, inbox monitor, follow-up sequences (specs in `systems/`)
+4. **Launch outreach** — property managers, contractors, recent home buyers (templates in `outreach/`)
+5. **Manage & optimize** — track leads, adjust ads, scale what works
 
-### Tier 2: The Growth Machine — $3,500 setup + $997/mo
-**"Fill Your Calendar Without Hiring Another Person"**
-- Everything in Tier 1
-- AI cold outreach to property managers, realtors, commercial accounts
-- Neighborhood targeting (just finished a job → canvass the block)
-- Seasonal campaign automation (AC tune-ups in spring, furnace in fall)
-- AI-powered estimate follow-up (the #1 revenue leak)
-- Referral program automation
-- **Expected: 30-60 additional booked jobs/month**
+**Time to deploy:** 3-5 days for a basic launch. Full system in 2-3 weeks.
 
-### Tier 3: The AI Operations Hub — $7,500 setup + $1,997/mo
-**"Run Your Entire Business From Your Phone"**
-- Everything in Tier 2
-- AI dispatcher (routes jobs to right technician based on skills/location/availability)
-- Automated invoicing and payment follow-up
-- Inventory and parts ordering triggers
-- Technician scheduling optimization
-- Customer lifecycle management (maintenance reminders, seasonal outreach)
-- Financial dashboard (revenue per tech, cost per lead, job profitability)
-- **Expected: 20-40% revenue increase + 15-20 hours/week freed for the owner**
+---
+
+## The Offer (What You Sell)
+
+### Option A: Retainer Model
+| Tier | Setup Fee | Monthly | What They Get |
+|------|-----------|---------|---------------|
+| **Lead Recovery Engine** | $1,500 | $497/mo | AI phone, lead follow-up, review automation |
+| **Growth Machine** | $3,500 | $997/mo | + outreach, campaigns, estimate follow-up |
+| **AI Ops Hub** | $7,500 | $1,997/mo | + dispatch, scheduling, full operations |
+
+### Option B: Partnership Model (Equity/Revenue Share)
+Best for startups or operators who can't afford a retainer upfront.
+
+| Term | Details |
+|------|---------|
+| **Your cut** | 25-35% of net profit (after expenses) |
+| **Their cut** | 65-75% of net profit |
+| **They cover** | Marketing budget ($500-$1,000/mo to start) |
+| **You cover** | Your own tech stack (AI tools, APIs, software) |
+| **Payout** | Biweekly |
+| **Test period** | 30 days — either side can walk |
+| **Growth** | Reinvest 10% of gross into marketing |
+
+See `agreements/PARTNERSHIP-TEMPLATE.md` for the ready-to-sign agreement.
+
+### Option C: Hybrid
+Setup fee ($1,500-$3,500) + smaller equity share (15-20%). Good middle ground.
 
 ---
 
 ## Repository Structure
 
 ```
-├── README.md                              # This file
-├── BUSINESS-MODEL.md                      # Full vertical strategy and market analysis
+├── agreements/                             # Ready-to-sign client agreements
+│   ├── PARTNERSHIP-TEMPLATE.md             # Equity/revenue share agreement
+│   ├── RETAINER-TEMPLATE.md                # Monthly retainer agreement
+│   └── PRICING-CALCULATOR.md              # How to price for different trades
 │
-├── offers/
-│   ├── OFFER-1-LEAD-RECOVERY-ENGINE.md    # Tier 1: $497/mo — AI receptionist + follow-up
-│   ├── OFFER-2-GROWTH-MACHINE.md          # Tier 2: $997/mo — Outreach + estimate recovery
-│   └── OFFER-3-AI-OPS-HUB.md             # Tier 3: $1,997/mo — Full operations automation
+├── offers/                                 # Detailed offer breakdowns
+│   ├── OFFER-1-LEAD-RECOVERY-ENGINE.md     # Tier 1: $1,500 + $497/mo
+│   ├── OFFER-2-GROWTH-MACHINE.md           # Tier 2: $3,500 + $997/mo
+│   └── OFFER-3-AI-OPS-HUB.md              # Tier 3: $7,500 + $1,997/mo
 │
-├── sales/
-│   ├── LEAD-GEN-MASTER-PLAN.md            # ★ Complete 6-channel lead gen strategy
-│   ├── CRAIGSLIST-SYSTEM.md               # ★ Deep-dive Craigslist posting system
-│   ├── MARKETPLACE-CHANNELS.md            # ★ All platforms ranked (HD Pro, Porch, Nextdoor, etc.)
-│   ├── SALES-PLAYBOOK.md                  # Full outreach-to-close scripts
-│   ├── EMAIL-SEQUENCES.md                 # 4 cold email campaigns with templates
-│   ├── OBJECTION-HANDLING.md              # Every objection and word-for-word response
-│   └── CASE-STUDY-TEMPLATES.md            # Templates for social proof production
+├── lead-gen/                               # Lead generation playbooks
+│   ├── CRAIGSLIST-PLAYBOOK.md              # CL posting strategy, templates, services
+│   ├── FB-MARKETPLACE-PLAYBOOK.md          # Product-style workarounds for services
+│   ├── NEXTDOOR-PLAYBOOK.md                # Nextdoor monitoring & response
+│   ├── FREE-PLATFORMS-GUIDE.md             # 45+ free/cheap platforms
+│   └── POSTING-SERVICES-GUIDE.md           # How to use CL posting services
 │
-├── systems/
-│   └── SYSTEMS-SPEC.md                    # Full technical architecture + costs
+├── outreach/                               # Direct outreach system
+│   ├── PROPERTY-MANAGERS.md                # Cold call/email scripts for PMs
+│   ├── CONTRACTOR-PARTNERSHIPS.md          # Subcontract and referral deals
+│   └── RECENT-HOMEBUYERS.md                # County records + outreach templates
 │
-├── implementation/
-│   └── IMPLEMENTATION-GUIDE.md            # Day-by-day deployment + onboarding checklist
+├── systems/                                # AI system specifications
+│   ├── AI-RECEPTIONIST.md                  # 24/7 phone answering setup
+│   ├── LEAD-FOLLOW-UP-ENGINE.md            # Automated follow-up sequences
+│   ├── REVIEW-MANAGER.md                   # Review request + response automation
+│   ├── AI-DISPATCHER.md                    # Job routing to right technician
+│   ├── ESTIMATE-CLOSER.md                  # Estimate follow-up automation
+│   ├── COLD-OUTREACH.md                    # AI outreach to PMs and investors
+│   ├── CUSTOMER-LIFECYCLE.md               # Retention + reactivation
+│   ├── SEASONAL-CAMPAIGNS.md               # Seasonal marketing automation
+│   ├── NEIGHBORHOOD-TARGETING.md           # Just-finished-a-job canvassing
+│   └── SYSTEMS-SPEC.md                     # Full technical architecture
 │
-└── assets/
-    └── diagrams/                          # System architecture diagrams
+├── sales/                                  # How to sell this to clients
+│   ├── SALES-PLAYBOOK.md                   # Full sales process + scripts
+│   ├── OBJECTION-HANDLING.md               # Word-for-word rebuttals
+│   ├── EMAIL-SEQUENCES.md                  # Outreach email campaigns
+│   ├── CASE-STUDY-TEMPLATES.md             # Results templates
+│   ├── LEAD-GEN-MASTER-PLAN.md             # How to find clients
+│   ├── MARKETPLACE-CHANNELS.md             # Platform comparison
+│   └── CRAIGSLIST-SYSTEM.md                # CL for client acquisition
+│
+├── implementation/                         # Deployment guides
+│   ├── IMPLEMENTATION-GUIDE.md             # Day-by-day deployment checklist
+│   ├── ONBOARDING-CHECKLIST.md             # Client onboarding steps
+│   └── TECH-STACK.md                       # Tools, costs, setup
+│
+├── research/                               # Market research
+│   ├── ICP-RESEARCH.md                     # Ideal client profile
+│   └── PRICING-ECONOMICS.md                # Unit economics and margins
+│
+└── BUSINESS-MODEL.md                       # Full vertical strategy
 ```
 
 ---
 
-## The Math That Sells This
+## Deploy to a New Client in 5 Days
 
-**For the home services owner:**
-- Average job value: $350 (residential), $2,500 (commercial)
-- Missed calls per month: ~45 (industry average)
-- Revenue lost to missed calls: $9,000-$15,000/month
-- Estimates sent but never followed up: 40-60% go cold
-- Revenue lost to unfollowed estimates: $8,000-$20,000/month
+### Day 1: Sign & Setup
+- [ ] Sign agreement (use template from `agreements/`)
+- [ ] Get client's business info (services, area, phone, photos)
+- [ ] Set up Google Business Profile (if they don't have one)
+- [ ] Set up tracking phone numbers (CallRail or Google Voice)
 
-**What we recover:**
-- Tier 1 ($497/mo): Recovers $5,000-$15,000/month in lost revenue
-- Tier 2 ($997/mo): Adds $10,000-$25,000/month in new revenue
-- Tier 3 ($1,997/mo): Adds $15,000-$40,000/month + frees 15-20 hrs/week
+### Day 2: Lead Gen Launch
+- [ ] Post 7 Craigslist ads (use `lead-gen/CRAIGSLIST-PLAYBOOK.md`)
+- [ ] Post 7 Facebook Marketplace listings (use `lead-gen/FB-MARKETPLACE-PLAYBOOK.md`)
+- [ ] Claim Nextdoor business page
+- [ ] Sign up for Porch, Yelp, BuildZoom, Home Depot Pro Referral
 
-**ROI: 10-30x at every tier. This sells itself when you show them the math.**
+### Day 3: AI Systems
+- [ ] Deploy AI phone receptionist (see `systems/AI-RECEPTIONIST.md`)
+- [ ] Set up FB Marketplace auto-responder (5-min check cycle)
+- [ ] Configure lead follow-up sequences
+- [ ] Set up review request automation
+
+### Day 4: Outreach
+- [ ] Pull list of local property managers — start cold calling
+- [ ] Pull recent home buyers from county records — prep outreach
+- [ ] Identify contractor partnership opportunities
+- [ ] Post on free classified sites (Locanto, ClassifiedAds, Geebo)
+
+### Day 5: Optimize & Monitor
+- [ ] Review first leads coming in
+- [ ] Adjust ad copy based on response rates
+- [ ] Ensure phone system is catching all calls
+- [ ] Set up lead tracking spreadsheet or CRM
+- [ ] Weekly check-in call with client
 
 ---
 
-## Quick Start
+## Works For Any Home Services Trade
 
-1. Read `BUSINESS-MODEL.md` for the full strategy
-2. Read `ICP-RESEARCH.md` to understand exactly who to target
-3. Pick an offer from `offers/` to lead with (recommend Tier 1 as entry)
-4. Use `sales/SALES-PLAYBOOK.md` for outreach
-5. Deploy using `implementation/IMPLEMENTATION-GUIDE.md`
+This system has been designed to work across:
+- **Handyman / General Repair**
+- **Wildlife Removal**
+- **Roof Repair**
+- **Property Maintenance**
+- **HVAC**
+- **Plumbing**
+- **Electrical**
+- **Landscaping / Lawn Care**
+- **Cleaning (Residential & Commercial)**
+- **Painting**
+- **Pest Control**
+- **Garage Door**
+- **Fencing / Decking**
+- **Pressure Washing**
+
+Just swap the service name, adjust the ad templates, and deploy.
 
 ---
 
-*Built by UAIS (Using AI to Scale)*
+## First Case Study: Jacksonville Handyman
+
+**Client:** Handyman & property maintenance startup in Jacksonville, FL
+**Structure:** Partnership model — 35/65 split
+**Services:** Wildlife removal, roof repair, handyman, on-call property maintenance
+**Lead gen:** Craigslist (7 ads/day) + Facebook Marketplace + Nextdoor + direct outreach
+**90-day target:** 10 field workers, $30-50K/month gross revenue
+
+See the full deployment in the [Handyman-Home-Services-Model](https://github.com/jbellsolutions/Handyman-Home-Services-Model) repo.
