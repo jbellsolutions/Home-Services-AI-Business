@@ -1,0 +1,298 @@
+# ============================================
+# Craigslist Ad Templates - Jacksonville FL
+# ============================================
+# 3-DAY TEST PLAN (7 posts per test day):
+#
+# Wildlife removal  → skilled trade services + household services  = 2 posts
+# Roof repair       → skilled trade services + household services  = 2 posts
+# Property maint    → skilled trade services + household services  = 2 posts
+# Handyman work     → skilled trade services (solo)                = 1 post
+#                                                         TOTAL    = 7 posts/day
+#
+# Each template has 3 title variants and 3 body variants = 9 unique combos.
+# The poster picks a random combo per post, never repeating same day.
+
+templates:
+  wildlife_removal:
+    categories:
+      - skilled_trade_services  # sks
+      - household_services      # hss
+    titles:
+      - "Wildlife Removal -- Raccoons, Squirrels, Rats -- Jacksonville FL"
+      - "Animal Removal & Exclusion -- Same Day Service -- Jax Area"
+      - "Critter Problems? Wildlife Trapping & Removal -- Jacksonville"
+    bodies:
+      - |
+        Hearing scratching in your attic? Animals under your house? We handle it.
+
+        WILDLIFE REMOVAL SERVICES:
+        * Raccoon removal & exclusion
+        * Squirrel trapping & attic cleanup
+        * Rat & mouse removal
+        * Opossum & armadillo removal
+        * Snake removal
+        * Bird & bat exclusion
+        * Dead animal removal
+
+        We don't just remove them -- we seal entry points so they can't come back.
+
+        Licensed. Insured. Humane methods only.
+
+        FREE inspection -- Call or text today: {phone}
+
+        Serving Jacksonville, Orange Park, Atlantic Beach, Ponte Vedra, St. Augustine
+      - |
+        Wildlife in your home is more than a nuisance -- it's a health hazard and property damage risk.
+
+        WE REMOVE:
+        * Raccoons (attic, crawlspace, chimney)
+        * Squirrels (attic, soffit, walls)
+        * Rats & mice (whole-home treatment)
+        * Opossums, armadillos, snakes
+        * Birds & bats
+
+        WHAT MAKES US DIFFERENT:
+        * Same-day emergency response
+        * Full exclusion work (seal all entry points)
+        * Attic cleanup & sanitization available
+        * Damage repair included in most packages
+        * Humane, legal methods
+
+        Call/text for a FREE inspection: {phone}
+
+        Jacksonville and all of Duval, St. Johns, Clay, and Nassau County
+      - |
+        Got critters? We get them out and keep them out. Period.
+
+        * Raccoons, squirrels, rats, mice, opossums
+        * Snakes, birds, bats, armadillos
+        * Attic, crawlspace, walls, chimney
+        * Emergency same-day service available
+        * Entry point sealing & exclusion
+        * Damage repair & attic restoration
+
+        Don't let wildlife destroy your home. We've removed hundreds of animals
+        from Jacksonville homes and we know exactly how to solve your problem.
+
+        {phone} -- Free inspection, honest pricing.
+
+        Service area: All of Jacksonville FL and surrounding communities
+    images_folder: "wildlife"
+
+  roof_repair:
+    categories:
+      - skilled_trade_services
+      - household_services
+    titles:
+      - "Roof Repair -- Leaks, Shingles, Storm Damage -- Jacksonville FL"
+      - "Roof Leak? Fast Affordable Roof Repair -- Jax Area"
+      - "Roof Repairs & Patching -- Free Estimates -- Jacksonville"
+    bodies:
+      - |
+        Roof leaking? Missing shingles? Don't wait until it gets worse.
+
+        ROOF REPAIR SERVICES:
+        * Leak detection & repair
+        * Missing/damaged shingle replacement
+        * Storm damage repair
+        * Flashing & vent boot repair
+        * Gutter repair & replacement
+        * Soffit & fascia repair
+        * Flat roof patching
+        * Skylight leak repair
+
+        We fix roofs -- we don't try to sell you a new one.
+        Honest assessment. Fair pricing. Quality work.
+
+        FREE roof inspection -- Call or text: {phone}
+
+        Serving Jacksonville, Orange Park, Ponte Vedra, St. Augustine, Fernandina
+      - |
+        Florida storms are brutal on roofs. We fix the damage fast and affordably.
+
+        WHAT WE REPAIR:
+        * Shingle replacement (any brand)
+        * Roof leaks (we find the source)
+        * Wind & hail damage
+        * Flashing around chimneys, vents, skylights
+        * Sagging or soft spots
+        * Gutter damage from storms
+        * Insurance claim assistance available
+
+        No high-pressure sales. No unnecessary full replacements.
+        We repair what needs fixing and save you thousands.
+
+        {phone} -- Call or text for your free inspection
+
+        All of Duval County and surrounding areas
+      - |
+        A small roof leak today becomes a $10,000 problem tomorrow. Let's fix it now.
+
+        * Emergency tarping available for active leaks
+        * Shingle repair & replacement
+        * Tile roof repairs
+        * Metal roof repairs
+        * Commercial flat roof patching
+        * Gutter, soffit & fascia work
+
+        Licensed. Insured. Jacksonville local.
+
+        We'll come out, inspect your roof for FREE, show you exactly what's
+        wrong, and give you an honest price. No games.
+
+        Call/text: {phone}
+        Jacksonville FL and all surrounding communities
+    images_folder: "roofing"
+
+  property_maintenance:
+    categories:
+      - skilled_trade_services
+      - household_services
+    titles:
+      - "On-Call Property Maintenance -- Landlords & PMs Welcome -- Jacksonville"
+      - "Property Maintenance Service -- Monthly Plans Available -- Jax FL"
+      - "Rental Property Repairs -- Fast Turnaround for Landlords -- Jacksonville"
+    bodies:
+      - |
+        Are you a landlord or property manager? We're your on-call maintenance team.
+
+        PROPERTY MAINTENANCE SERVICES:
+        * Tenant turnover repairs & make-ready
+        * Emergency maintenance response
+        * Monthly maintenance inspections
+        * Plumbing, electrical, HVAC (minor)
+        * Drywall, painting, flooring
+        * Lock changes & security
+        * Appliance hookup & minor repair
+        * Code violation remediation
+
+        We work with property managers across Jacksonville.
+        Fast response. Fair pricing. Detailed invoicing for your records.
+
+        MONTHLY PLANS AVAILABLE -- discounted rates for recurring clients.
+
+        Call or text: {phone}
+
+        Serving all of Jacksonville, Orange Park, Ponte Vedra, Clay County
+      - |
+        Property managers and landlords -- stop juggling 10 different contractors.
+
+        ONE CALL HANDLES IT ALL:
+        * Make-ready / turnover (paint, clean, repair, patch)
+        * Emergency repairs (plumbing leaks, broken doors, electrical)
+        * Preventive maintenance inspections
+        * Handyman punch lists
+        * Exterior maintenance (pressure washing, gutters, minor landscaping)
+        * Tenant move-in/move-out walkthroughs
+
+        WHY PROPERTY MANAGERS CHOOSE US:
+        * Priority scheduling for PM clients
+        * 24-48 hour turnaround on most repairs
+        * Detailed before/after photos
+        * Clean, professional invoicing
+        * Background-checked technicians
+
+        {phone} -- Let's set up your maintenance plan.
+
+        All of Jacksonville FL and surrounding areas
+      - |
+        Rental property repairs eating into your profits? We keep costs down and tenants happy.
+
+        * Turnover make-ready (we handle the full punch list)
+        * On-call emergency repairs
+        * Monthly property checks
+        * Painting, drywall, plumbing, electrical
+        * Door/lock/window repairs
+        * Appliance install & hookup
+        * Pressure washing & curb appeal
+
+        Volume discounts for property managers with 5+ units.
+        We invoice per job with full documentation.
+
+        {phone} -- Call, text, or email for your PM rate card.
+
+        Jacksonville, Orange Park, Fleming Island, Ponte Vedra, St. Augustine
+    images_folder: "property_maintenance"
+
+  general_handyman:
+    categories:
+      - skilled_trade_services  # solo -- only one category
+    titles:
+      - "Licensed Handyman -- All Home Repairs -- Jacksonville FL"
+      - "Pro Handyman Services -- Same Day Available -- Jax Area"
+      - "Reliable Handyman -- No Job Too Small -- Jacksonville"
+    bodies:
+      - |
+        Need something fixed around the house? We handle it all.
+
+        HANDYMAN SERVICES:
+        * Drywall repair & patching
+        * Interior & exterior painting
+        * Door & window repair
+        * TV mounting & shelving
+        * Minor plumbing & electrical
+        * Furniture assembly
+        * Pressure washing
+        * Deck & fence repair
+        * Ceiling fan installation
+        * General home repairs
+
+        Licensed and insured. Serving Jacksonville for 10+ years.
+
+        FREE ESTIMATES -- Call or text today: {phone}
+
+        Serving: Jacksonville, Orange Park, Atlantic Beach, Neptune Beach, Ponte Vedra
+      - |
+        Your local Jacksonville handyman -- here to help with any home repair.
+
+        WHAT WE DO:
+        * Home repairs big & small
+        * Drywall, painting, patching
+        * Doors, windows, locks
+        * TV mounting, shelving, furniture assembly
+        * Deck & fence repair
+        * Pressure washing
+        * Minor plumbing & electrical
+        * Ceiling fans, fixtures, outlets
+
+        Honest pricing. Quality work. We show up on time.
+
+        Call or text for a FREE quote: {phone}
+
+        We serve all of Jacksonville and surrounding areas.
+      - |
+        Tired of waiting weeks for a contractor? We show up on time and get it done right.
+
+        OUR HANDYMAN SERVICES:
+        * General home repairs (anything around the house)
+        * Drywall & painting
+        * Plumbing & electrical (minor)
+        * Carpentry & trim work
+        * Deck & fence repairs
+        * Pressure washing
+        * TV mounting & smart home install
+        * And much more -- just ask
+
+        Licensed. Insured. Jacksonville local.
+
+        {phone} -- Call or text anytime for your free estimate.
+
+        Service areas: Jacksonville, Mandarin, San Marco, Riverside, Southside, Beaches
+    images_folder: "general"
+
+# ============================================
+# POSTING SCHEDULE (3-day test)
+# ============================================
+# Each test day posts 7 ads total:
+#
+# Time     Service              Category
+# ------   ------------------   ----------------------
+# 07:00    Wildlife removal     skilled_trade_services
+# 08:30    Wildlife removal     household_services
+# 10:00    Roof repair          skilled_trade_services
+# 11:30    Roof repair          household_services
+# 13:00    Property maintenance skilled_trade_services
+# 14:30    Property maintenance household_services
+# 16:00    General handyman     skilled_trade_services
+#
+# Cost: 7 posts x $5 = $35/day, $105 for 3-day test

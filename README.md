@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A complete, ready-to-deploy business system for home services companies. You walk in, sign the client, and deploy everything from this repo. Marketing, lead gen, AI phone system, operations backend — all of it.
+A complete, ready-to-deploy business system for home services companies — strategy docs, sales playbooks, AI system specs, AND the automation code to run it all. You walk in, sign the client, and deploy everything from this repo.
 
 **The offer:** "I'll handle all your marketing, lead generation, AI phone system, and operations backend. You cover the marketing budget. I either charge a retainer OR take an equity/revenue share. You just do the work."
 
@@ -12,9 +12,10 @@ A complete, ready-to-deploy business system for home services companies. You wal
 
 1. **Sign the client** — use the partnership agreement template in `agreements/`
 2. **Deploy the lead gen** — Craigslist, Facebook Marketplace, Nextdoor, free platforms (all playbooks in `lead-gen/`)
-3. **Set up the AI systems** — phone receptionist, inbox monitor, follow-up sequences (specs in `systems/`)
-4. **Launch outreach** — property managers, contractors, recent home buyers (templates in `outreach/`)
-5. **Manage & optimize** — track leads, adjust ads, scale what works
+3. **Run the automation** — Craigslist poster, FB inbox monitor, lead tracker (code in `craigslist/`, `facebook/`, `shared/`)
+4. **Set up the AI systems** — phone receptionist, inbox monitor, follow-up sequences (specs in `systems/`)
+5. **Launch outreach** — property managers, contractors, recent home buyers (templates in `outreach/`)
+6. **Manage & optimize** — track leads, adjust ads, scale what works
 
 **Time to deploy:** 3-5 days for a basic launch. Full system in 2-3 weeks.
 
@@ -52,10 +53,28 @@ Setup fee ($1,500-$3,500) + smaller equity share (15-20%). Good middle ground.
 ## Repository Structure
 
 ```
+├── craigslist/                             # CL posting automation (code)
+│   ├── poster.py                           # Main posting script
+│   └── ad_templates/templates.yaml         # Ad copy + rotation sets
+│
+├── facebook/                               # FB Marketplace automation (code)
+│   ├── inbox_monitor.py                    # 5-min message checker + auto-responder
+│   └── FB-MARKETPLACE-WORKAROUNDS.md       # Platform workarounds & gotchas
+│
+├── shared/                                 # Shared utilities (code)
+│   ├── db.py                               # SQLite lead tracker
+│   └── logger.py                           # Logging
+│
+├── config/                                 # Configuration
+│   └── settings.yaml                       # Cities, proxies, schedules, business info
+│
+├── scripts/                                # Setup & utility scripts
+│   ├── setup.sh                            # Install dependencies
+│   └── test_proxy.py                       # Proxy connectivity test
+│
 ├── agreements/                             # Ready-to-sign client agreements
 │   ├── PARTNERSHIP-TEMPLATE.md             # Equity/revenue share agreement
-│   ├── RETAINER-TEMPLATE.md                # Monthly retainer agreement
-│   └── PRICING-CALCULATOR.md              # How to price for different trades
+│   └── RETAINER-TEMPLATE.md               # Monthly retainer agreement
 │
 ├── offers/                                 # Detailed offer breakdowns
 │   ├── OFFER-1-LEAD-RECOVERY-ENGINE.md     # Tier 1: $1,500 + $497/mo
@@ -63,16 +82,11 @@ Setup fee ($1,500-$3,500) + smaller equity share (15-20%). Good middle ground.
 │   └── OFFER-3-AI-OPS-HUB.md              # Tier 3: $7,500 + $1,997/mo
 │
 ├── lead-gen/                               # Lead generation playbooks
-│   ├── CRAIGSLIST-PLAYBOOK.md              # CL posting strategy, templates, services
 │   ├── FB-MARKETPLACE-PLAYBOOK.md          # Product-style workarounds for services
-│   ├── NEXTDOOR-PLAYBOOK.md                # Nextdoor monitoring & response
-│   ├── FREE-PLATFORMS-GUIDE.md             # 45+ free/cheap platforms
-│   └── POSTING-SERVICES-GUIDE.md           # How to use CL posting services
+│   └── POSTING-SERVICES-GUIDE.md          # How to use CL posting services
 │
 ├── outreach/                               # Direct outreach system
-│   ├── PROPERTY-MANAGERS.md                # Cold call/email scripts for PMs
-│   ├── CONTRACTOR-PARTNERSHIPS.md          # Subcontract and referral deals
-│   └── RECENT-HOMEBUYERS.md                # County records + outreach templates
+│   └── FREE-PLATFORMS-AND-OUTREACH.md      # 45+ free/cheap platforms + scripts
 │
 ├── systems/                                # AI system specifications
 │   ├── AI-RECEPTIONIST.md                  # 24/7 phone answering setup
@@ -100,12 +114,80 @@ Setup fee ($1,500-$3,500) + smaller equity share (15-20%). Good middle ground.
 │   ├── ONBOARDING-CHECKLIST.md             # Client onboarding steps
 │   └── TECH-STACK.md                       # Tools, costs, setup
 │
-├── research/                               # Market research
-│   ├── ICP-RESEARCH.md                     # Ideal client profile
-│   └── PRICING-ECONOMICS.md                # Unit economics and margins
+├── infrastructure/                         # Reusable infrastructure templates
+│   └── templates/                          # Security layers, self-healing pipeline
 │
+├── ICP-RESEARCH.md                         # Ideal client profile
+├── PRICING-ECONOMICS.md                    # Unit economics and margins
 └── BUSINESS-MODEL.md                       # Full vertical strategy
 ```
+
+---
+
+## Automation Code — Quick Start
+
+```bash
+# 1. Clone
+git clone https://github.com/jbellsolutions/Home-Services-AI-Business.git
+cd Home-Services-AI-Business
+
+# 2. Install
+pip install -r requirements.txt
+playwright install chromium
+
+# 3. Configure
+cp config/.env.example .env
+# Edit .env with your proxy credentials, FB login, etc.
+
+# 4. Test proxy
+python scripts/test_proxy.py
+
+# 5. Run CL poster (single ad test)
+python craigslist/poster.py --test
+
+# 6. Run FB inbox monitor
+python facebook/inbox_monitor.py
+```
+
+### Required Environment Variables
+```
+# Craigslist
+CL_EMAIL=your-cl-email@example.com
+CL_PASSWORD=your-cl-password
+PROXY_HOST=us.residential.example.com
+PROXY_PORT=10000
+PROXY_USER=your-proxy-user
+PROXY_PASS=your-proxy-pass
+
+# Facebook
+FB_EMAIL=your-fb-email@example.com
+FB_PASSWORD=your-fb-password
+
+# Notifications
+NOTIFICATION_PHONE=+1234567890
+```
+
+### Automation Architecture
+```
+┌─────────────────────────────────────────────┐
+│              ORCHESTRATOR (n8n)              │
+│         Schedule + Monitor + Alert           │
+├──────────────────┬──────────────────────────┤
+│  ┌───────────┐   │   ┌──────────────────┐   │
+│  │ CRAIGSLIST│   │   │ FB MARKETPLACE   │   │
+│  │  POSTER   │   │   │  POSTER + INBOX  │   │
+│  │ Playwright│   │   │ Browser Use /    │   │
+│  │ + Proxy   │   │   │ Airtop           │   │
+│  └─────┬─────┘   │   └────────┬─────────┘   │
+│        │         │            │              │
+│  ┌─────▼─────────▼────────────▼─────────┐   │
+│  │         LEAD TRACKER (SQLite)         │   │
+│  │  ads posted | responses | bookings    │   │
+│  └───────────────────────────────────────┘   │
+└─────────────────────────────────────────────┘
+```
+
+**Safety & compliance:** Respects CL's 48-hour posting rule, unique ad content per post, human handoff for complex FB conversations, kill switch for immediate stop.
 
 ---
 
@@ -118,14 +200,14 @@ Setup fee ($1,500-$3,500) + smaller equity share (15-20%). Good middle ground.
 - [ ] Set up tracking phone numbers (CallRail or Google Voice)
 
 ### Day 2: Lead Gen Launch
-- [ ] Post 7 Craigslist ads (use `lead-gen/CRAIGSLIST-PLAYBOOK.md`)
+- [ ] Post 7 Craigslist ads (use `lead-gen/` playbooks + `craigslist/poster.py`)
 - [ ] Post 7 Facebook Marketplace listings (use `lead-gen/FB-MARKETPLACE-PLAYBOOK.md`)
 - [ ] Claim Nextdoor business page
 - [ ] Sign up for Porch, Yelp, BuildZoom, Home Depot Pro Referral
 
 ### Day 3: AI Systems
 - [ ] Deploy AI phone receptionist (see `systems/AI-RECEPTIONIST.md`)
-- [ ] Set up FB Marketplace auto-responder (5-min check cycle)
+- [ ] Start `facebook/inbox_monitor.py` for auto-responses (5-min cycle)
 - [ ] Configure lead follow-up sequences
 - [ ] Set up review request automation
 
@@ -146,23 +228,12 @@ Setup fee ($1,500-$3,500) + smaller equity share (15-20%). Good middle ground.
 
 ## Works For Any Home Services Trade
 
-This system has been designed to work across:
-- **Handyman / General Repair**
-- **Wildlife Removal**
-- **Roof Repair**
-- **Property Maintenance**
-- **HVAC**
-- **Plumbing**
-- **Electrical**
-- **Landscaping / Lawn Care**
-- **Cleaning (Residential & Commercial)**
-- **Painting**
-- **Pest Control**
-- **Garage Door**
-- **Fencing / Decking**
-- **Pressure Washing**
+- Handyman / General Repair · Wildlife Removal · Roof Repair · Property Maintenance
+- HVAC · Plumbing · Electrical · Landscaping / Lawn Care
+- Cleaning (Residential & Commercial) · Painting · Pest Control
+- Garage Door · Fencing / Decking · Pressure Washing
 
-Just swap the service name, adjust the ad templates, and deploy.
+Just swap the service name in `config/settings.yaml`, update the ad templates, and deploy.
 
 ---
 

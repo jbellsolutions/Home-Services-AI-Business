@@ -1,0 +1,137 @@
+# ============================================
+# Home Services Lead Automation - Settings
+# ============================================
+
+business:
+  name: "J Bell Handyman Services"
+  phone: "+1-904-XXX-XXXX"
+  email: ""
+  booking_url: ""  # Calendly/Cal.com link
+  service_area:
+    - Jacksonville
+    - Orange Park
+    - Atlantic Beach
+    - Neptune Beach
+    - Jacksonville Beach
+    - Ponte Vedra
+    - Fleming Island
+    - Mandarin
+  services:
+    - Wildlife/Animal Removal
+    - Roof Repair
+    - General Handyman
+    - On-Call Property Maintenance
+
+# --- Craigslist Configuration ---
+craigslist:
+  metro_url: "https://jacksonville.craigslist.org"
+  posts_per_day: 7
+  renewal_hours: 48
+  test_days_per_week: 3  # 3-day test
+
+  # 7 posts per test day:
+  # 3 services x 2 categories each = 6, plus 1 handyman solo = 7
+  posting_schedule:
+    - time: "07:00"
+      template: wildlife_removal
+      category: skilled_trade_services
+    - time: "08:30"
+      template: wildlife_removal
+      category: household_services
+    - time: "10:00"
+      template: roof_repair
+      category: skilled_trade_services
+    - time: "11:30"
+      template: roof_repair
+      category: household_services
+    - time: "13:00"
+      template: property_maintenance
+      category: skilled_trade_services
+    - time: "14:30"
+      template: property_maintenance
+      category: household_services
+    - time: "16:00"
+      template: general_handyman
+      category: skilled_trade_services
+
+  # Cost: 7 posts x $5 = $35/day, $105 for 3-day test
+  max_post_age_days: 14
+  require_unique_images: true
+
+# --- Facebook Marketplace Configuration ---
+facebook:
+  check_interval_minutes: 5
+  auto_respond: true
+  # Keywords that trigger human handoff (price negotiation, complex jobs)
+  handoff_keywords:
+    - "how much"
+    - "price"
+    - "cost"
+    - "estimate"
+    - "quote"
+    - "budget"
+    - "expensive"
+    - "cheaper"
+    - "discount"
+  # Max auto-responses per conversation before human handoff
+  max_auto_responses: 3
+  # Hours of operation for auto-responses
+  active_hours:
+    start: "07:00"
+    end: "21:00"
+  # Post categories to use (FB Marketplace workaround for services)
+  post_as_category: "Home & Garden"
+  posts_per_week: 14  # 2 per day
+  posting_days:
+    - monday
+    - tuesday
+    - wednesday
+    - thursday
+    - friday
+    - saturday
+    - sunday
+
+# --- Proxy Configuration ---
+proxy:
+  provider: ""  # smartproxy | brightdata | iproyal | oxylabs
+  geo_target: "Jacksonville, FL"
+  type: "static_residential"  # or rotating_residential
+  # Rotate IP every N posts (for rotating proxies)
+  rotate_every_posts: 1
+  # Fallback: use remote Mac in Jacksonville
+  use_remote_mac: false
+  remote_mac:
+    host: ""
+    user: ""
+    ssh_key: "~/.ssh/jax_mac_key"
+    tailscale_ip: ""
+
+# --- Lead Tracking ---
+tracking:
+  database: "sqlite:///data/leads.db"
+  # Track: ad_id, platform, timestamp, lead_name, lead_phone, lead_message, status, booking_date
+  export_csv: true
+  export_path: "./data/leads_export.csv"
+
+# --- Notifications ---
+notifications:
+  enabled: true
+  channels:
+    - sms    # Via Twilio
+    - email  # Via SMTP
+  # Alert on new leads immediately
+  alert_on_new_lead: true
+  # Daily summary at this time
+  daily_summary_time: "20:00"
+
+# --- Safety ---
+safety:
+  # Kill switch - set to true to stop all automation immediately
+  kill_switch: false
+  # Max posts per day across all platforms
+  max_daily_posts: 15
+  # Max auto-responses per day
+  max_daily_responses: 50
+  # Cooldown between actions (seconds)
+  min_action_delay: 30
+  max_action_delay: 120
